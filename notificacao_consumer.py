@@ -12,9 +12,9 @@ if __name__ == '__main__':
         ,'sasl.username'     : conf.sasl_username
         ,'sasl.password'     : conf.sasl_password
     ,'group.id':'NOTIFICACAO'
-    ,'auto.offset.reset':'Latest'})
+    ,'auto.offset.reset':'earliest'})
 
-    consumer.subscribe(["Pedidos","Pedidos_validos","Fraudes"])
+    consumer.subscribe(["Notificacoes"])
     total_count = 0
     try:
         while True:

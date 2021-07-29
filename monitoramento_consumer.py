@@ -15,7 +15,7 @@ if __name__ == '__main__':
         ,'sasl.username'     : conf.sasl_username
         ,'sasl.password'     : conf.sasl_password
     ,'group.id':'MONITORAMENTO_LOG'
-    ,'auto.offset.reset':'Latest'})
+    ,'auto.offset.reset':'earliest'})
 
     consumer.subscribe([topic,topic_fraudes,topic_pedidos_valido])
     total_count = 0

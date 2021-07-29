@@ -12,6 +12,7 @@ mensagem = {"mensagem":"",
 def processaFraude(pedido):
     print('Avaliando pedido')
     id = pedido['id']
+    time.sleep(0.2)
     if id%3==0:
        return True
     return False
@@ -22,6 +23,9 @@ if __name__ == '__main__':
     topic_fraudes= 'Fraudes'
     topic_pedidos_valido= 'Pedidos_validos'
     topic = 'Pedidos'
+    topic_notificacoes = 'Notificacoes'
+    
+    #e “earliest” offset or the “latest” offset (the default). You can also select “none” i
     consumer = Consumer({
         'bootstrap.servers' : conf.bootstrap_servers
         ,'security.protocol' : conf.security_protocol
@@ -29,8 +33,8 @@ if __name__ == '__main__':
         ,'sasl.username'     : conf.sasl_username
         ,'sasl.password'     : conf.sasl_password
         ,'group.id':'ML_FRAUDES_DETECT'
-        ,'auto.offset.reset':'Latest'})
-
+        ,'auto.offset.reset':'earliest'})
+    
     consumer.subscribe([topic])
     total_count = 0
     try:
@@ -49,11 +53,14 @@ if __name__ == '__main__':
                 data = json.loads(record_value)
 
                 payload = json.loads(data['dados'])
+                usuario =  payload['usuario']
                 if processaFraude(payload):
                     mensagem['dados'] = json.dumps(payload)
                     mensagem['status'] = 'Recusado'
                     mensagem['mensagem'] = "Pedido {} {} {} é fraude".format(payload['id'],payload['usuario'],payload['produto'])
                     mensagem['id']= payload['id']
+                    print(usuario)
+                    producer.produceKafka(topic_notificacoes,json.dumps(mensagem),usuario)
                     producer.produceKafka(topic_fraudes,json.dumps(mensagem),None)
                 else:
                     print("Enviando pedido {} para processar".format(payload['id']))
@@ -61,6 +68,7 @@ if __name__ == '__main__':
                     mensagem['mensagem'] = "Pedido {} {} {} aprovado".format(payload['id'],payload['usuario'],payload['produto'])
                     mensagem['status'] = 'Aprovado'
                     mensagem['id']= payload['id']
+                    producer.produceKafka(topic_notificacoes,json.dumps(mensagem),usuario)  
                     producer.produceKafka(topic_pedidos_valido,json.dumps(mensagem),None)                    
                     total_count = total_count +1                
     except KeyboardInterrupt:

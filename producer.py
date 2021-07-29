@@ -29,7 +29,3 @@ def produceKafka(topico,mensagem,key):
     else:
         p.produce(topico,value= mensagem, on_delivery=delivery_report)
     p.flush()
-    
-
-# Wait for any outstanding messages to be delivered and delivery report
-# callbacks to be triggered.
