@@ -16,11 +16,13 @@ Kafka na confluent cloud:
 - Em posse dos dados da API e do cluster obtidos na etapa 3, vamos criar nosso arquivo de configuração.
    - Entre na pasta do projeto "Pedidos_em_kafka" e crie o arquivo conf.py
    - Preencha o arquivo com os dados coletados na etapa 3 da seguinte forma:
+   {
        bootstrap_servers = 'XXX' <- Troque os X pelo bootstrap_servers da etapa 3.
        security_protocol ='XXX'  <- Troque os X pelo security_protocol da etapa 3.
        sasl_mechanisms = 'XXXX'  <- Troque os X pelo sasl_mechanisms da etapa 3.
        sasl_username ='XXXXX'    <- Troque os X pelo username da etapa 3.
        sasl_password = 'XXXXXXXXXXXXXXXXX'  <- Troque os X pelo password da etapa 3.
+   } 
    - Salve o arquivo.
 
 
