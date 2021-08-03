@@ -16,15 +16,12 @@ Kafka na confluent cloud:
 - Em posse dos dados da API e do cluster obtidos na etapa 3, vamos criar nosso arquivo de configuração.
    - Entre na pasta do projeto "Pedidos_em_kafka" e crie o arquivo conf.py
    - Preencha o arquivo com os dados coletados na etapa 3 da seguinte forma:
-   {
+   ```
        bootstrap_servers = 'XXX' <- Troque os X pelo bootstrap_servers da etapa 3.
        security_protocol ='XXX'  <- Troque os X pelo security_protocol da etapa 3.
        sasl_mechanisms = 'XXXX'  <- Troque os X pelo sasl_mechanisms da etapa 3.
        sasl_username ='XXXXX'    <- Troque os X pelo username da etapa 3.
        sasl_password = 'XXXXXXXXXXXXXXXXX'  <- Troque os X pelo password da etapa 3.
-   } 
-   - Salve o arquivo.
-
 
 Entendendo os recursos:
 - api.py -> Uma api bem simples para receber as requisições de pedidos, com o endpoint /Pedidos e com acesso a documentação em /docs
@@ -64,3 +61,9 @@ Entendo o fluxo da aplicação:
   - Simula o envio de notificação de status do pedido ao cliente.
 - Recurso Monitoramento escuta os tópicos /Pedidos, /Fraudes, /Notificacoes, /Pedidos_validos
   - Seu papel e gravar todo log de comunicação entre os recursos que compõe a aplicação.
+
+
+Referências: 
+- https://www.confluent.io/
+- https://www.youtube.com/watch?v=BgbKAaWKMn8&t=1368s
+- https://www.youtube.com/watch?v=LX19wk2B5Ak&t=1108s
