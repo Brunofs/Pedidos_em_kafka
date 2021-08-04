@@ -12,7 +12,8 @@ mensagem = {"mensagem":"",
 def processaFraude(pedido):
     print('Avaliando pedido')
     id = pedido['id']
-    time.sleep(0.2)
+    time.sleep(2)
+    print('Enviando avaliação')
     if id%3==0:
        return True
     return False
@@ -20,7 +21,7 @@ def processaFraude(pedido):
 if __name__ == '__main__':
 
     key = 'Fraudes'
-    topic_fraudes= 'Fraudes'
+    topic_fraudes= 'Pedidos_recusados'
     topic_pedidos_valido= 'Pedidos_validos'
     topic = 'Pedidos'
     topic_notificacoes = 'Notificacoes'
