@@ -9,7 +9,7 @@ Kafka na confluent cloud:
 - Acesse https://www.confluent.io/confluent-cloud/  e siga as orientações de cadastro, a confluente cloud tem uma versão free que te da $200 para teste.
 - Apos concluir a etapa de cadastro precisamos criar os tópicos:
    - Acesse o "cluster" que você criou no processo da cadastro, vá em "Topics",  depois em " + Add topic".
-   - Para este trabalho precisamos criar os tópicos: "Fraudes", "Notificacoes", "Pedidos" e "Pedidos_validos" (Todos os tópicos precisam de no máximo 3 partições).
+   - Para este trabalho precisamos criar os tópicos: "Pedidos_recusados", "Notificacoes", "Pedidos" e "Pedidos_validos" (Todos os tópicos precisam de no máximo 3 partições).
 - Após criar os tópicos precisamos criar uma API key para dar acesso aos nossos recursos no cluster.
    - Acesse o menu "CLI and tools" e vá na aba "CLI Tools".
    - Aperte o botão "Create Kafka cluster API key & secret", logo abaixo  na parte "Create a configuration file" copie os dados da caixa dessa etapa.
