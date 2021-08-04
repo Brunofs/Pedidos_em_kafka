@@ -2,7 +2,7 @@
 Este repositório tem por objetivo apresentar um estudo de caso com kafka na Confluent Cloud, aplicado a uma simulação de processamento de pedidos.
 
 Requisitos:
-- python 3
+- Python 3
 - Conta na Confluent
 
 Kafka na confluent cloud:
