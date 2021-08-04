@@ -63,6 +63,10 @@ Entendo o fluxo da aplicação:
   - Seu papel e gravar todo log de comunicação entre os recursos que compõe a aplicação.
 
 
+
+Para exemplo deste trabalho foi utilizado a solução do Kafka na concluent, entretanto deixo nas referencias um video explicando como instalar e configurar o kafka localmente.
+
+
 Referências: 
 - https://www.confluent.io/
 - https://www.youtube.com/watch?v=BgbKAaWKMn8&t=1368s
