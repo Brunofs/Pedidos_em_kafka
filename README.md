@@ -49,18 +49,22 @@ Iniciando outros recursos:
   - Abra um terminal e digite python notificacao_consumer.py
 
 
-Entendo o fluxo da aplicação:
+Entendendo o fluxo da aplicação:
 
 - A API recebe um pedido
   - API posta pedido no tópico /Pedidos e posta no tópico /Notificacoes a atualização de status do pedido
 - Recurso fraudes escuta o tópico /Pedidos
   - Recurso Fraudes processa o pedido 
-    - Se for fraude, posta no topico /Fraudes e posta no tópico /Notificaoes a atualização de status do pedido
+    - Se for fraude, posta no topico /Pedidos_recusados e posta no tópico /Notificaoes a atualização de status do pedido
     - Se não for fraude, posta na tópico /Pedidos_validos e posta no tópico /Notificaoes a atualização de status do pedido
 - Recurso Notificacao escuta o tópico /Notificacoes
   - Simula o envio de notificação de status do pedido ao cliente.
-- Recurso Monitoramento escuta os tópicos /Pedidos, /Fraudes, /Notificacoes, /Pedidos_validos
+- Recurso Monitoramento escuta os tópicos /Pedidos, /Pedidos_recusados, /Notificacoes, /Pedidos_validos
   - Seu papel e gravar todo log de comunicação entre os recursos que compõe a aplicação.
+
+
+
+Para exemplo deste trabalho foi utilizado a solução do Kafka na concluent, entretanto deixo nas referências um video explicando como instalar e configurar o kafka localmente.
 
 
 Referências: 
