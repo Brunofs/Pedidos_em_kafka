@@ -33,7 +33,7 @@ Entendendo os recursos:
 
 Iniciando a aplicação:
 Levantando API de pedidos:
-- Dentro do projeto execute o comando pip install requirements para instalar todas as dependências do projeto.
+- Dentro do projeto execute o comando "pip install -r requirements.txt" para instalar todas as dependências do projeto.
 - Execute o comando uvicorn api:app, para subir a api de pedidos (por default deve subir na porta 8000).
 - Acessando a API, abra o navegador e acesse localhost:8000/docs (endpoint da documentação da API).
 - Ao final você já tera sua api funcionando.

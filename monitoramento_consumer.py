@@ -5,7 +5,7 @@ import conf
 
 if __name__ == '__main__':
     key = 'Fraudes'
-    topic_fraudes= 'Fraudes'
+    topic_fraudes= 'Pedidos_recusados'
     topic_pedidos_valido= 'Pedidos_validos'
     topic = 'Pedidos'
     consumer = Consumer({
