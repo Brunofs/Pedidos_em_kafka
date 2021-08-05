@@ -49,7 +49,7 @@ Iniciando outros recursos:
   - Abra um terminal e digite python notificacao_consumer.py
 
 
-Entendendo o fluxo da aplicação:
+Entendendo o fluxo da aplicação:1.7.0
 
 - A API recebe um pedido
   - API posta pedido no tópico /Pedidos e posta no tópico /Notificacoes a atualização de status do pedido
