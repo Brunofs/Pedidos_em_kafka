@@ -64,7 +64,7 @@ Entendendo o fluxo da aplicação:
 
 
 
-Para exemplo deste trabalho foi utilizado a solução do Kafka na concluent, entretanto deixo nas referencias um video explicando como instalar e configurar o kafka localmente.
+Para exemplo deste trabalho foi utilizado a solução do Kafka na concluent, entretanto deixo nas referências um video explicando como instalar e configurar o kafka localmente.
 
 
 Referências: 
